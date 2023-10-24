@@ -1,0 +1,21 @@
+# General macOS generated files
+.DS_Store
+.AppleDouble
+.AppleDesktop
+.Trashes
+
+# Spotlight
+.Spotlight-V100
+
+# Temporary files
+.TemporaryItems
+
+# File system events
+.fseventsd
+
+# iCloud
+.DocumentRevisions-V100
+
+# Miscellaneous
+Icon?
+.apdisk
