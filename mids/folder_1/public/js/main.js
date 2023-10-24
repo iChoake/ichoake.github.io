@@ -1,5 +1,35 @@
 var slides = {}
+// Disable right click and save as
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
 
+document.addEventListener("keydown", function(event) {
+  // Disable F12 key
+  if (event.keyCode === 123) {
+      event.preventDefault();
+  }
+
+  // Disable Ctrl+Shift+I keys
+  if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+      event.preventDefault();
+  }
+
+  // Disable Ctrl+Shift+C keys
+  if (event.ctrlKey && event.shiftKey && event.keyCode === 67) {
+      event.preventDefault();
+  }
+
+  // Disable Ctrl+Shift+J keys
+  if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
+      event.preventDefault();
+  }
+
+  // Disable Ctrl+U keys
+  if (event.ctrlKey && event.keyCode === 85) {
+      event.preventDefault();
+  }
+});
 function createSlides() {
   $("a.gallery-photo").each(function (photo_id, photo) {
     var slide = {
@@ -53,14 +83,12 @@ function openPhotoSwipe() {
     addCaptionHTMLFn: addCaptionHTML,
     preload: [2,5],
     zoomEl: false,
-    shareEl: true,
+    shareEl: false,
     barsSize: {top:0, bottom:0},
     bgOpacity: 1,
     loop: false,
     mainClass: 'pswp--minimal--dark',
-    shareButtons: [
-        {id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
-    ],
+    
   };
 
   var gallery = new PhotoSwipe( $('.pswp')[0], PhotoSwipeUI_Default, slides[gallery_id], options);
@@ -95,3 +123,22 @@ $( document ).ready(function() {
   createSlides()
   $('div.gallery a').on('click', openPhotoSwipe)
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
